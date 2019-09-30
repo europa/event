@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="viewgroup">
+        <attr name="down_intercepted" format="boolean" />
+        <attr name="move_intercepted" format="boolean" />
+        <attr name="up_intercepted" format="boolean" />
+        <attr name="down_touched" format="boolean" />
+        <attr name="move_touched" format="boolean" />
+        <attr name="up_touched" format="boolean" />
+    </declare-styleable>
+</resources>
