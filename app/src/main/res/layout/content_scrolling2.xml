@@ -8,11 +8,37 @@
     tools:context=".activity.ScrollingActivity"
     tools:showIn="@layout/activity_scrolling2">
 
-    <Button
-        android:id="@+id/normal_btn"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/normal_btn"></Button>
+        android:orientation="vertical">
 
+        <Button
+            android:id="@+id/normal_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/normal_btn"></Button>
+
+        <Button
+            android:id="@+id/intercept_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/intercept_btn"></Button>
+
+        <Button
+            android:id="@+id/touch_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/touch_btn"></Button>
+
+        <Button
+            android:id="@+id/interceptandtouch_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/interceptandtouch_btn"></Button>
+    </LinearLayout>
 </androidx.core.widget.NestedScrollView>

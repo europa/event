@@ -43,13 +43,13 @@ public class ParentView extends ViewGroup {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        ViewLog.d(TAG, getEventName(ev));
+        ViewLog.d(TAG, getEventName(ev)+";\n"+getTouchSetting(downTouched,moveTouched,upTouched));
         return super.dispatchTouchEvent(ev);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        ViewLog.d(TAG, getEventName(event));
+        ViewLog.d(TAG, getEventName(event)+";\n"+getTouchSetting(downTouched,moveTouched,upTouched));
         if (downTouched || moveTouched || upTouched) {
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
@@ -65,7 +65,8 @@ public class ParentView extends ViewGroup {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        ViewLog.d(TAG, ViewBase.getEventName(ev));
+        ViewLog.d(TAG, ViewBase.getEventName(ev)+"\n;downIntercepted:"+downIntercepted+
+                ";moveIntercepted:"+moveIntercepted+";moveIntercepted:"+upIntercepted);
         if (downIntercepted || moveIntercepted || upIntercepted) {
             switch (ev.getAction()) {
                 case MotionEvent.ACTION_DOWN:
@@ -77,5 +78,9 @@ public class ParentView extends ViewGroup {
             }
         }
         return super.onInterceptTouchEvent(ev);
+    }
+
+    private String getTouchSetting(boolean downTouched, boolean moveTouched, boolean upTouched) {
+        return "downTouched:" + downTouched + ";moveTouched:" + moveTouched + ";upTouched:" + upTouched;
     }
 }

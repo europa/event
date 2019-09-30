@@ -34,13 +34,13 @@ public class ViewBase extends View {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        ViewLog.d(TAG, getEventName(event));
+        ViewLog.d(TAG, getEventName(event) +";\n"+ getSetting(downTouched,moveTouched,upTouched));
         return super.dispatchTouchEvent(event);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        ViewLog.d(TAG, getEventName(event));
+        ViewLog.d(TAG, getEventName(event)+";\n"+getSetting(downTouched,moveTouched,upTouched));
         if (downTouched || moveTouched || upTouched) {
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
@@ -63,5 +63,9 @@ public class ViewBase extends View {
         if (action == MotionEvent.ACTION_UP)
             return "ACTION_UP";
         return "Other: " + action;
+    }
+
+    private String getSetting(boolean downTouched, boolean moveTouched, boolean upTouched) {
+        return "downTouched:" + downTouched + ";moveTouched:" + moveTouched + ";upTouched:" + upTouched;
     }
 }

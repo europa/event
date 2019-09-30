@@ -21,6 +21,19 @@
         <activity
             android:name=".activity.NormalActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.InterceptActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.TouchActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.InterceptAndTouchActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <service android:name="com.fatangare.logcatviewer.service.LogcatViewerService"
+            android:label="LogcatLoggerService"></service>
+        <service android:name="com.fatangare.logcatviewer.service.LogcatViewerFloatingView"
+            android:label="LogcatLoggerFloatingView" > </service>
     </application>
 
 </manifest>
