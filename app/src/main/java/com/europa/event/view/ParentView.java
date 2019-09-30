@@ -1,10 +1,8 @@
 package com.europa.event.view;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +31,7 @@ public class ParentView extends ViewGroup {
         upTouched = a.getBoolean(R.styleable.viewgroup_up_touched, false);
         String tag = getTag().toString();
         TAG = tag.isEmpty() ? TAG : tag;
+        TAG += "---%s";
     }
 
     @Override
@@ -44,12 +43,13 @@ public class ParentView extends ViewGroup {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
+        ViewLog.d(TAG, getEventName(ev));
         return super.dispatchTouchEvent(ev);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        ViewLog.d(TAG,getEventName(event));
+        ViewLog.d(TAG, getEventName(event));
         if (downTouched || moveTouched || upTouched) {
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
@@ -65,7 +65,7 @@ public class ParentView extends ViewGroup {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        Log.i(TAG, ViewBase.getEventName(ev));
+        ViewLog.d(TAG, ViewBase.getEventName(ev));
         if (downIntercepted || moveIntercepted || upIntercepted) {
             switch (ev.getAction()) {
                 case MotionEvent.ACTION_DOWN:

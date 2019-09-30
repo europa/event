@@ -91,4 +91,7 @@
     </string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_scrolling2">ScrollingActivity2</string>
+    <string name="normal_btn">没有拦截和消费</string>
+    <string name="normal">View Tree没有拦截和消费时，disptachTouchEvent方法，会将down事件，沿着顶层View分发到点击View,
+    onTouchEvent方法，会冒泡到activity，被activity消费。后续的move、up事件，只会被activity消费，不会分发到view层。</string>
 </resources>

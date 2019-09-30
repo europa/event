@@ -29,6 +29,7 @@ public class ViewBase extends View {
         upTouched = a.getBoolean(R.styleable.viewgroup_up_touched, false);
         String tag = getTag().toString();
         TAG = tag.isEmpty() ? TAG : tag;
+        TAG += "---%s";
     }
 
     @Override
