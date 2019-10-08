@@ -7,7 +7,6 @@ import android.view.View;
 import androidx.appcompat.widget.Toolbar;
 
 import com.europa.event.R;
-import com.fatangare.logcatviewer.utils.LogcatViewer;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -19,7 +18,6 @@ public class ScrollingActivity extends BaseActivity {
         setContentView(R.layout.activity_scrolling2);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        LogcatViewer.showLogcatLoggerView(getApplicationContext());
 
         findViewById(R.id.normal_btn).setOnClickListener(new View.OnClickListener() {
             @Override

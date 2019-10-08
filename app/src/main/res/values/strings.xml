@@ -94,7 +94,7 @@
     <string name="normal_btn">没有拦截和消费</string>
     <string name="normal">View Tree没有拦截和消费时，disptachTouchEvent方法，会将down事件，沿着顶层View分发到点击View,
     onTouchEvent方法，会冒泡到activity，被activity消费。后续的move、up事件，只会被activity消费，不会分发到view层。</string>
-    <string name="intercept_btn">拦截</string>
+    <string name="intercept_btn">只拦截</string>
     <string name="intercept">View Tree只有拦截事件时，某层拦截down时，dispatchTouchEvent方法，会将down事件，沿着顶层View分发到点击View。
     onTouchEvent方法，会冒泡到activity，被activity消费。后续的move、up事件，只会被activity消费，不会分发到view层。\n 某层拦截move或up时，
         disptachTouchEvent方法，会将down事件，沿着顶层View分发到最底层View。onTouchEvent方法，
@@ -107,9 +107,9 @@
     <string name="interceptandtouch_btn">拦截和消费事件</string>
     <string name="highdown_lowdown">高层拦截down,低层消费down</string>
     <string name="highdown_lowdown_tip">down分发到该层，onTouch从该层冒泡到activity，后续move、up被activity处理。低层消费down无效</string>
-    <string name="highmove_lowdown">高层拦截move,低层消费down</string>
+    <string name="highmove_lowdown">蓝色高层拦截move,绿色低层消费down</string>
     <string name="highmove_lowdown_tip">down分发到最低层，onTouch从最底层冒泡到该层，后续move、up从顶层分发到该层，不再分发到底层。</string>
-    <string name="lowdown_highdown">低层拦截down,高层消费down</string>
+    <string name="lowdown_highdown">绿色低层拦截down,蓝色高层消费down</string>
     <string name="lowdown_highdown_tip">down分发到该层，onTouch冒泡到消费down层，
         后续move、up分发到消费down层，不再分发，onTouch相继触发</string>
 </resources>

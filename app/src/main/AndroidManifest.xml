@@ -30,10 +30,7 @@
         <activity
             android:name=".activity.InterceptAndTouchActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <service android:name="com.fatangare.logcatviewer.service.LogcatViewerService"
-            android:label="LogcatLoggerService"></service>
-        <service android:name="com.fatangare.logcatviewer.service.LogcatViewerFloatingView"
-            android:label="LogcatLoggerFloatingView" > </service>
     </application>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
 </manifest>

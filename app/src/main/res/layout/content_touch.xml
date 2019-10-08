@@ -14,6 +14,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="蓝色down被消费">
+
+        </TextView>
+
         <com.europa.event.view.ParentView
             android:layout_width="400dp"
             android:layout_height="400dp"
@@ -48,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
-            android:text="move被消费">
+            android:text="蓝色move被消费">
 
         </TextView>
 

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.europa.event.ViewLog;
 import com.europa.event.view.ViewBase;
 
+
 public class BaseActivity extends AppCompatActivity {
     private String TAG = getClass().getSimpleName()+"---%s";
     @Override

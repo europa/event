@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
-            android:text="高层拦截down,低层消费down">
+            android:text="蓝色高层拦截down,绿色低层消费down">
 
         </TextView>
 
