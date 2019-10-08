@@ -17,11 +17,8 @@ package com.europa.event;
  */
 
 
-import android.os.SystemClock;
 import android.util.Log;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 
 public class ViewLog {
@@ -29,12 +26,17 @@ public class ViewLog {
 
     public static boolean DEBUG = Log.isLoggable(TAG, Log.VERBOSE);
 
+    public static String ONCE_LOGS = "";
+
     /**
      * {@link Class#getName()} uses reflection and calling it on a potentially hot code path may
      * have some cost. To minimize this cost we fetch class name once here and use it later.
      */
     private static final String CLASS_NAME = ViewLog.class.getName();
 
+    public static void clearOnceLog(){
+        ONCE_LOGS = "";
+    }
     /**
      * Customize the log tag for your application, so that other apps using Volley don't mix their
      * logs with yours. <br>
@@ -97,7 +99,9 @@ public class ViewLog {
                 break;
             }
         }
-        return String.format(Locale.US, "[%d] %s: %s", Thread.currentThread().getId(), caller, msg);
+        String message = String.format(Locale.US, "[%d] %s: %s", Thread.currentThread().getId(), caller, msg);
+        ONCE_LOGS += message+"\n";
+        return message;
     }
 
     /**
