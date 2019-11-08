@@ -10,6 +10,16 @@ import com.europa.event.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.io.IOException;
+
+import javassist.CannotCompileException;
+import javassist.ClassPool;
+import javassist.CtClass;
+import javassist.CtConstructor;
+import javassist.CtField;
+import javassist.CtMethod;
+import javassist.NotFoundException;
+
 public class ScrollingActivity extends BaseActivity {
 
     @Override
@@ -18,6 +28,32 @@ public class ScrollingActivity extends BaseActivity {
         setContentView(R.layout.activity_scrolling2);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ClassPool pool = ClassPool.getDefault();
+        try {
+            CtClass ss = pool.makeClass("com.europa.event.test");
+            CtField f1 = CtField.make("private int empno;", ss);
+            CtField f2 = CtField.make("private String ename;", ss);
+            ss.addField(f1);
+            ss.addField(f2);
+            CtMethod m1 = CtMethod.make("public int getEmpno(){return empno;}", ss);
+            CtMethod m2 = CtMethod.make("public void setEmpno(int empno){this.empno=empno;}", ss);
+            ss.addMethod(m1);
+            ss.addMethod(m2);
+            CtConstructor constructor = new CtConstructor(new CtClass[]{CtClass.intType, pool.get("java.lang.String")}, ss);
+            constructor.setBody("{this.empno=empno; this.ename=ename;}");
+            ss.addConstructor(constructor);
+            ss.writeFile();
+            System.out.println("生成类，成功！");
+            System.out.println("success");
+        } catch (CannotCompileException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (NotFoundException e) {
+            e.printStackTrace();
+        }
+
 
         findViewById(R.id.normal_btn).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +79,13 @@ public class ScrollingActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 toActivity(InterceptAndTouchActivity.class);
+            }
+        });
+
+        findViewById(R.id.tool_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toActivity(ToolActivity.class);
             }
         });
 

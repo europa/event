@@ -114,6 +114,7 @@
         如果消费事件在该层之下，消费事件无效。此时，onTouch将事件冒泡到activity。后续只被activity消费。如果消费事件在同一层或上层，
         onTouch事件会将事件冒泡到该层。后续事件会分发到该层，然后被消费。</string>
     <string name="interceptandtouch_btn">拦截和消费事件</string>
+    <string name="tool_btn">tool属性测试</string>
     <string name="highdown_lowdown">高层拦截down,低层消费down</string>
     <string name="highdown_lowdown_tip">down分发到该层，onTouch从该层冒泡到activity，后续move、up被activity处理。低层消费down无效</string>
     <string name="highmove_lowdown">蓝色高层拦截move,绿色低层消费down</string>

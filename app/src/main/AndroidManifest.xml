@@ -30,6 +30,9 @@
         <activity
             android:name=".activity.InterceptAndTouchActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.ToolActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
